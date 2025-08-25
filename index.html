@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Nkateko! 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #ffb6c1 0%, #ffc3a0 100%);
+            color: #5a3e36;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 253, 252, 0.98);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            padding: 45px 35px;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #d46a6a;
+            font-size: 4.2rem;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1px;
+        }
+        
+        .birthday-message {
+            font-size: 1.5rem;
+            margin-bottom: 35px;
+            line-height: 1.8;
+            padding: 0 10px;
+        }
+        
+        .cake-container {
+            position: relative;
+            margin: 35px 0;
+        }
+        
+        .cake {
+            font-size: 5.5rem;
+            animation: floatCake 4s ease-in-out infinite;
+            display: inline-block;
+            text-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            color: #d46a6a;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .cake:hover {
+            transform: scale(1.1);
+        }
+        
+        @keyframes floatCake {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-18px) rotate(3deg);
+            }
+            50% {
+                transform: translateY(-28px) rotate(-3deg);
+            }
+            75% {
+                transform: translateY(-18px) rotate(3deg);
+            }
+        }
+        
+        .cake-sparkle {
+            position: absolute;
+            font-size: 1.8rem;
+            opacity: 0;
+            animation: sparkle 2s ease-out;
+            z-index: 3;
+        }
+        
+        @keyframes sparkle {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-35px) scale(1.3);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-70px) scale(0.5);
+            }
+        }
+        
+        .footer {
+            margin-top: 40px;
+            color: #5a3e36;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
+            z-index: 2;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 1.8rem;
+            color: #ff6b6b;
+            opacity: 0.7;
+            animation: float 8s ease-in-out infinite;
+            z-index: 1;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+        
+        .giraffe {
+            position: absolute;
+            font-size: 4rem;
+            opacity: 0;
+            animation: giraffeAppear 18s ease-in-out infinite;
+            z-index: 1;
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.35);
+            filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.6));
+        }
+        
+        .giraffe:nth-child(1) {
+            top: 12%;
+            left: 7%;
+            animation-delay: 4s;
+        }
+        
+        .giraffe:nth-child(2) {
+            bottom: 18%;
+            right: 9%;
+            animation-delay: 14s;
+        }
+        
+        .giraffe:nth-child(3) {
+            top: 28%;
+            right: 14%;
+            animation-delay: 22s;
+        }
+        
+        @keyframes giraffeAppear {
+            0%, 100% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.85);
+            }
+            15% {
+                opacity: 1;
+                transform: translateY(0) scale(1.05);
+            }
+            30% {
+                opacity: 1;
+                transform: translateY(0) scale(1.05);
+            }
+            45% {
+                opacity: 0;
+                transform: translateY(-40px) scale(0.85);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-25px) rotate(12deg);
+            }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: fall 6s linear infinite;
+            z-index: 1;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-10px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(600px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .balloon {
+            position: absolute;
+            width: 55px;
+            height: 65px;
+            border-radius: 50%;
+            animation: floatBalloon 18s ease-in-out infinite;
+            z-index: 1;
+            opacity: 0.85;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .balloon::after {
+            content: "";
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            width: 2px;
+            height: 18px;
+            background: linear-gradient(to bottom, #fff, #ccc);
+            transform: translateX(-50%);
+        }
+        
+        .balloon:nth-child(1) {
+            background: radial-gradient(circle at 30% 30%, #ff6b6b, #d46a6a);
+            left: 12%;
+            animation-delay: 0s;
+        }
+        
+        .balloon:nth-child(2) {
+            background: radial-gradient(circle at 30% 30%, #4ecdc4, #2a9d8f);
+            left: 28%;
+            animation-delay: 2.5s;
+        }
+        
+        .balloon:nth-child(3) {
+            background: radial-gradient(circle at 30% 30%, #ffd166, #f4a261);
+            left: 44%;
+            animation-delay: 5s;
+        }
+        
+        .balloon:nth-child(4) {
+            background: radial-gradient(circle at 30% 30%, #6a0572, #4a0361);
+            left: 60%;
+            animation-delay: 7.5s;
+        }
+        
+        .balloon:nth-child(5) {
+            background: radial-gradient(circle at 30% 30%, #f9c74f, #f8961e);
+            left: 76%;
+            animation-delay: 10s;
+        }
+        
+        @keyframes floatBalloon {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.85;
+            }
+            90% {
+                opacity: 0.85;
+            }
+            100% {
+                transform: translateY(-120px) rotate(25deg);
+                opacity: 0;
+            }
+        }
+        
+        .special-message {
+            background: linear-gradient(to right, #fff9f8, #fff3f2);
+            border-radius: 18px;
+            padding: 28px;
+            margin: 30px 0;
+            position: relative;
+            border: 2px dashed #d46a6a;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .special-message h3 {
+            color: #d46a6a;
+            margin-bottom: 18px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.3rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .special-message p {
+            font-style: italic;
+            font-size: 1.3rem;
+            line-height: 1.7;
+        }
+        
+        .emoji-row {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .emoji-item {
+            font-size: 2.8rem;
+            animation: bounce 3.5s infinite;
+            animation-delay: calc(var(--delay) * 0.5s);
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .memory-hint {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #d46a6a;
+            font-style: italic;
+            cursor: pointer;
+            padding: 12px 20px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.5);
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .memory-hint:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            .birthday-message {
+                font-size: 1.3rem;
+            }
+            
+            .special-message p {
+                font-size: 1.15rem;
+            }
+            
+            .emoji-item {
+                font-size: 2.2rem;
+            }
+            
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .giraffe {
+                font-size: 3.2rem;
+            }
+            
+            .giraffe:nth-child(1) {
+                top: 8%;
+                left: 5%;
+            }
+            
+            .giraffe:nth-child(2) {
+                bottom: 12%;
+                right: 5%;
+            }
+            
+            .giraffe:nth-child(3) {
+                top: 22%;
+                right: 8%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative hearts -->
+    <div class="heart" style="top: 12%; left: 8%;">❤️</div>
+    <div class="heart" style="top: 23%; right: 13%;">💖</div>
+    <div class="heart" style="bottom: 18%; left: 13%;">💕</div>
+    <div class="heart" style="bottom: 28%; right: 9%;">💗</div>
+    
+    <!-- Balloons -->
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    
+    <!-- Giraffes that appear and disappear -->
+    <div class="giraffe">🦒</div>
+    <div class="giraffe">🦒</div>
+    <div class="giraffe">🦒</div>
+    
+    <!-- Confetti -->
+    <div id="confetti-container"></div>
+    
+    <div class="container">
+        <h1>Happy Birthday Nkateko! 🎉🎂🎁</h1>
+        
+        <div class="cake-container">
+            <div class="cake" id="cake">🎂</div>
+        </div>
+        
+        <p class="birthday-message">
+            To my dearest best giraffe ... may your special day be as beautiful and wonderful as the person I know you to be! ... And I know you pretty well, so that's a high bar.
+        </p>
+        
+        <div class="emoji-row">
+            <div class="emoji-item" style="--delay: 1">🥳</div>
+            <div class="emoji-item" style="--delay: 2">🎊</div>
+            <div class="emoji-item" style="--delay: 3">🎈</div>
+            <div class="emoji-item" style="--delay: 4">❤️</div>
+            <div class="emoji-item" style="--delay: 5">🎁</div>
+        </div>
+        
+        <div class="special-message">
+            <h3>A Special Wish 💫</h3>
+            <p>"May your day be filled with laughter, joy, and all the things that make you smile like decorating cake for some reason. You deserve the world and more!
+                Veuve Clicquot can help with that, just sayin' 😂🍾"
+            </p>
+        </div>
+        
+        <p class="birthday-message">
+            Nkateko Mfanaka, I don't tell you this often But you are truly one of the most amazing people I know, Hope u know that 👻, Probably told your self that :-).
+            Your kindness, patience, and unwavering believe in me 😂 inspire me every day.
+            I'm so grateful to have u in my life and I cherish our friendship more than words can express.<br>
+            ... Trust Nkateko ... Trust.
+            giraffes for life me and you ... HAPPY BIRTHDAY❤️😊🦒.
+        </p>
+        
+        <div class="emoji-row">
+            <div class="emoji-item" style="--delay: 6">🌸</div>
+            <div class="emoji-item" style="--delay: 7">🌺</div>
+            <div class="emoji-item" style="--delay: 8">🌷</div>
+            <div class="emoji-item" style="--delay: 9">🌼</div>
+            <div class="emoji-item" style="--delay: 10">💐</div>
+        </div>
+        
+        <div class="cake-container">
+            <div class="cake">✨🌟🎉</div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Made by Tblah for my amazing best friend on her special day</p>
+    </div>
+
+    <script>
+        // Create confetti
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#ffa5a5', '#ffd6cc', '#d46a6a', '#ffb6c1', '#4ecdc4', '#ffd166', '#6a0572'];
+            const container = document.getElementById('confetti-container');
+            const shapes = ['circle', 'square', 'heart'];
+            
+            for (let i = 0; i < 45; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDelay = Math.random() * 6 + 's';
+                confetti.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Random shapes
+                if (Math.random() > 0.7) {
+                    confetti.style.borderRadius = '0';
+                } else if (Math.random() > 0.5) {
+                    confetti.style.borderRadius = '50%';
+                }
+                
+                container.appendChild(confetti);
+            }
+        }
+        
+        // Change title when tab is not visible
+        function changeTitle() {
+            const originalTitle = document.title;
+            const newTitle = "🎉 Happy Birthday Nkateko! 🎉";
+            
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    document.title = newTitle;
+                } else {
+                    document.title = originalTitle;
+                }
+            });
+        }
+        
+        // Add more confetti periodically
+        function addPeriodicConfetti() {
+            setInterval(() => {
+                createConfetti();
+            }, 9000);
+        }
+        
+        // Cake interaction with sparkles
+        function setupCakeInteraction() {
+            const cake = document.getElementById('cake');
+            
+            cake.addEventListener('click', () => {
+                // Create sparkles
+                for (let i = 0; i < 15; i++) {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'cake-sparkle';
+                    sparkle.textContent = '✨';
+                    sparkle.style.left = Math.random() * 80 + 10 + '%';
+                    sparkle.style.animationDelay = Math.random() * 0.5 + 's';
+                    document.querySelector('.cake-container').appendChild(sparkle);
+                    
+                    // Remove sparkle after animation
+                    setTimeout(() => {
+                        sparkle.remove();
+                    }, 2000);
+                }
+                
+                // Add a subtle bounce effect
+                cake.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    cake.style.transform = 'scale(1)';
+                }, 300);
+            });
+        }
+        
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            createConfetti();
+            changeTitle();
+            addPeriodicConfetti();
+            setupCakeInteraction();
+        });
+    </script>
+</body>
+</html>
